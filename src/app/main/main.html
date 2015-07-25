@@ -1,36 +1,71 @@
 <div class="container">
 
   <div>
-    <acme-navbar creationDate="main.creationDate" />
+    <empregos-navbar></empregos-navbar>
   </div>
 
-  <div class="row">
-    <div class="large-12 large-text-center columns">
-      <div class="panel">
-        <h1>'Allo, 'Allo!</h1>
+ <div class="panel">
+   <div class="row">
+     <div class="large-12 large-text-center columns">
+        <h1>Encontre o emprego perfeito</h1>
         <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-        <p>Always a pleasure scaffolding your apps.</p>
-        <p class="animated infinite" ng-class="main.classAnimation">
-          <a href="#" class="button success" ng-click="main.showToastr()">Splendid Toastr</a>
-        </p>
-        <p>
-          With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']" />
-        </p>
+        <p>Salarios de R$1,000 ate R$20,000 por mes.</p>
+        <a href="#" class="button radius" ng-click="">Cadastre-se</a>
       </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="large-4 columns" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-      <div class="th">
-        <img class="right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-        <div class="caption">
-          <h3>{{ awesomeThing.title }}</h3>
-          <p>{{ awesomeThing.description }}</p>
-          <p><a ng-href="{{ awesomeThing.url }}">{{ awesomeThing.url }}</a></p>
+ <div class ="works">
+    <div class="row">
+      <div class="large-4 columns">
+        <div class="th">
+          <img class="right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+          <div class="caption">
+            <h3>Cadastre-se</h3>
+            <p>blah blah</p>
+          </div>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="th">
+          <img class="right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+          <div class="caption">
+            <h3>Get matched with an awesome company</h3>
+            <p>blah</p>
+          </div>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="th">
+          <img class="right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+          <div class="caption">
+            <h3>Get hired</h3>
+            <p>blah again</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
 </div>
+
+<footer class="panel">
+  <div class="row">
+     <div class="large-12 columns"><hr/>
+         <div class="row">
+    
+           <div class="large-6 columns">
+               <p>©2015 Empregos, Inc</p>
+           </div>
+    
+           <div class="large-6 columns">
+               <ul class="inline-list right">
+                 <li><a href="#">Como Funciona</a></li>
+                 <li><a href="#">Candidatos</a></li>
+                 <li><a href="#">Companhias</a></li>
+                 <li><a href="#">Termos</a></li>
+               </ul>
+           </div>
+               
+         </div>
+     </div>
+   </div>
+</footer>

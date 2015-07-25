@@ -3,16 +3,13 @@
 
   angular
     .module('empregosAngular')
-    .directive('acmeNavbar', acmeNavbar);
+    .directive('empregosNavbar', empregosNavbar);
 
   /** @ngInject */
-  function acmeNavbar() {
+  function empregosNavbar() {
     var directive = {
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbar.html',
-      scope: {
-          creationDate: '='
-      },
       controller: NavbarController,
       controllerAs: 'vm',
       bindToController: true

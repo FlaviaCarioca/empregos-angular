@@ -2,13 +2,17 @@
  *  If you want to override some foundation settings, you have to change values here.
  *  The list of settings values are listed here bower_components/foundation/scss/foundation/_settings.scss
  */
-$topbar-bg-color: #5AADBB;
+
 
 /**
  *  The import of foundation is made manually because there is still no links of the
  *  sass version in their bower.json...
  */
+@import '../../bower_components/foundation/scss/foundation/settings';
 @import '../../bower_components/foundation/scss/foundation';
+
+
+//$topbar-bg-color: $white-smoke; //#5AADBB;
 
 /**
  *  Do not remove this comments bellow. It's the markers used by wiredep to inject
@@ -25,7 +29,12 @@ $topbar-bg-color: #5AADBB;
 }
 
 .panel {
-  margin-top: 50px;
+  margin-top: 30px;
+}
+
+.works {
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .th {
@@ -36,6 +45,7 @@ $topbar-bg-color: #5AADBB;
     width: 50px;
   }
 }
+
 
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
