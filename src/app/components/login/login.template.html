@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="large-6 large-offset-3 medium-6 medium-offset-3 small-8 small-offset-1 text-center columns">
+  <div class="medium-6 medium-offset-3 small-8 small-offset-1 text-center columns">
    <div id="outside" class="outside panel">
       <h4>Login</h4>
-      <div id="inside" class="inside panel" ng-controller="LoginController as loginCtrl">
-        <form class="round-inputs" ng-submit="loginCtrl.login()">
+      <div id="inside" class="inside panel">
+        <form class="round-inputs" ng-submit="loginCtrl.login()" ng-controller="LoginController as loginCtrl">
           <div class="row">
             <div class="small-12 columns">
               <input type="email" placeholder="Email" ng-model="loginCtrl.username" required />
