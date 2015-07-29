@@ -15,20 +15,10 @@
                               }
                       };
 
-          $http({method: "POST", url: "/v1/login", data: auth}).then(handleSuccess, handleError("Error during login"));
+          // this returns a promise that will be handled in the controller
+          return $http({method: "POST", url: "/v1/auth", data: auth});
+
         }
       };
     }
-
-    // private functions
-    function handleSuccess(data) {
-        return data;
-    }
-
-    function handleError(error) {
-        return function () {
-            return { success: false, message: error };
-        };
-    }
-
 })();

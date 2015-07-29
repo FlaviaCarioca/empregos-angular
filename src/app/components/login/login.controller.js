@@ -7,13 +7,18 @@
 
     /** @ngInject */
     function loginController(UserService){
-      var ctrl = this;
+        var ctrl = this;
 
-      ctrl.login = function(){
-        UserService.login(ctrl.username, ctrl.password).success(function(data){
+        ctrl.login = login;
 
-        });
-      };
-    }
 
+        function login(){
+            UserService.login(ctrl.username, ctrl.password)
+            .then(function(sucesss){
+              console.log(sucess);
+            }, function(error){
+              console.log(error.status + ' ' + error.data.error);
+            });
+          }
+        }
 })();
