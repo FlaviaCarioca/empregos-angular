@@ -14,7 +14,7 @@
       })
       .state('login', {
         url: '/login',
-        templateUrl: 'app/components/user/login/login.html'
+        templateUrl: 'app/components/login/login.template.html',
         controller: 'LoginController',
         controllerAS: 'loginCtrl'
       });

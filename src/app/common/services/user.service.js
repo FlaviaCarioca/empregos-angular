@@ -3,19 +3,21 @@
 
   angular
     .module('empregosAngular')
-    .factory('user', UserService)
+    .factory('UserService', UserService);
 
+    /** @ngInject */
     function UserService($http){
       return {
         login: function(username, password){
-          var auth = "auth": {
+          var auth = { "auth": {
                                 "username": username,
                                 "password": password
                               }
+                      };
 
-          $http({method: "POST", url: "/v1/login"}, data: auth).then(handleSuccess, handleError("Error during login"));
+          $http({method: "POST", url: "/v1/login", data: auth}).then(handleSuccess, handleError("Error during login"));
         }
-      }
+      };
     }
 
     // private functions
