@@ -1,0 +1,30 @@
+#outside{
+  background-color: $white;
+}
+
+#inside{
+  background-color: $silver;
+}
+
+@media #{$small-only} {
+  #outside{
+    border-style: none;
+    border-color: red;
+  }
+}
+
+.round-inputs input {
+  border-radius: 1000px;
+  background-color: #4B3D58;
+  height: 3.3125rem;
+  text-align: center;
+}
+
+form .ng-dirty.ng-invalid {
+  border: 2px solid;
+  border-color: red;
+}
+
+#message {
+  color: red;
+}
