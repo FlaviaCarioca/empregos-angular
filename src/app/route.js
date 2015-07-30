@@ -17,6 +17,11 @@
         templateUrl: 'app/components/login/login.template.html',
         controller: 'LoginController',
         controllerAS: 'loginCtrl'
+      })
+      .state('registration', {
+        url: '/registration',
+        templateUrl: 'app/components/user/candidate/registration.template.html',
+        controller: 'RegistrationController'
       });
 
     $urlRouterProvider.otherwise('/');
