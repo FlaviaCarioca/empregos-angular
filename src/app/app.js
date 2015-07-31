@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('empregosAngular', ['ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'mm.foundation', 'ngMessages']);
+    .module('empregosAngular', ['environment', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'mm.foundation', 'ngMessages']);
 
 })();

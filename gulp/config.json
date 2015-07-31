@@ -1,0 +1,5 @@
+{
+
+  "development": { "env": { "baseApi": "http://localhost:3000/v1"  } },
+  "production": { "env": { "baseApi": "http://localhost:4000/v1" } }
+}

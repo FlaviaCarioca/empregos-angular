@@ -23,10 +23,7 @@ function browserSyncInit(baseDir, browser) {
 
   var server = {
     baseDir: baseDir,
-    routes: routes,
-    middleware: [
-        proxyMiddleware('/v1', { target: 'http://localhost:3000' })
-      ]
+    routes: routes
   };
 
   /*
