@@ -3,10 +3,10 @@
 
   angular
     .module('empregosAngular')
-    .factory('UserService', UserService);
+    .factory('LoginService', LoginService);
 
     /** @ngInject */
-    function UserService($http, ENV){
+    function LoginService($http, ENV){
       return {
         login: function(credentials){
           var auth = JSON.stringify({ auth: credentials });

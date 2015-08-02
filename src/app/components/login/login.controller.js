@@ -6,20 +6,17 @@
     .controller('LoginController', loginController);
 
     /** @ngInject */
-    function loginController(UserService, $scope, $location, $window, $rootScope){
+    function loginController(LoginService, $scope, $location, $window, $rootScope){
       var vm = this;
       vm.auth = {};
       vm.login = login;
 
       function login(){
-         UserService.login(this.auth)
+         LoginService.login(this.auth)
           .then(function(success){
-            // Store token in the sessionStore for future use
-            // $window.sessionStorage.setItem('token', success.data['auth_token']);
             $rootScope.loggedUser = true;
             $location.path('/dashboard');
           }, function(error){
-              $window.sessionStorage.removeItem('token');
               $rootScope.loggedUser = false;
               
               if(error.status === 401){

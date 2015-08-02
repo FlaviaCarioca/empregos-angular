@@ -21,32 +21,35 @@
   }
   
   /** ngInject */
-  function httpInterceptor($q, $window, $location){
+  function httpInterceptor($q, $window, $location, $log){
     return {
       'request': function(request){
         // Automatically adds the JWT token to the header of each request
-        console.log(request);
-        var token = $window.sessionStorage.getItem("token") || null;
+        $log.debug(request);
+        var token = $window.sessionStorage.getItem("token");
         if (token !== null){
           request.headers.Authorization = 'Bearer ' + token;
         }
-        return config;
+        return request;
       },
       'response': function(response){
           // If a token was sent back, save it
+          $log.debug(response);
           if (response.data.auth_token){
             $window.sessionStorage.setItem('token', response.data.auth_token);
-            console.log(response.data.auth_token);
+            $log.debug(response.data.auth_token);
           }
     
           if (response.status === 401) {
-              console.log("Response 401");
+              $window.sessionStorage.removeItem('token');
+              $log.debug("Response 401");
           }
           return response || $q.when(response);
       },
       'responseError': function(rejection) {
+        $log.debug(rejection);
           if (rejection.status === 401) {
-              console.log("Response Error 401", rejection);
+              $log.debug("Response Error 401", rejection);
               $location.path('/login');
           }
           return $q.reject(rejection);
