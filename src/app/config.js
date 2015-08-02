@@ -41,6 +41,7 @@
           }
     
           if (response.status === 401) {
+              // Remove token if unauthorized response 
               $window.sessionStorage.removeItem('token');
               $log.debug("Response 401");
           }
