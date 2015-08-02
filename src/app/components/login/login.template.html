@@ -17,7 +17,7 @@
               <input type="email" name="username" placeholder="Email" ng-model="loginCtrl.auth.username" required  ng-model-options="{ updateOn: 'blur' }">
             </div>
             <div class="small-12 columns">
-              <input type="password" name="password" placeholder="Password" ng-model="loginCtrl.auth.password" required >
+              <input type="password" name="password" placeholder="Password" ng-model="loginCtrl.auth.password" required  ng-model-options="{ updateOn: 'blur' }">
             </div>
             <div class="small-12 columns">
               <button type="submit" ng-disabled="loginForm.$invalid" class="button round">Submit</button>

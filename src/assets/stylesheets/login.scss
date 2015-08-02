@@ -9,22 +9,56 @@
 @media #{$small-only} {
   #outside{
     border-style: none;
-    border-color: red;
+    border-color: $red;
   }
 }
 
 .round-inputs input {
   border-radius: 1000px;
-  background-color: #4B3D58;
+  background-color: $purple;
   height: 3.3125rem;
   text-align: center;
+  color: $orange;
+}
+
+.round-inputs input:focus {
+  color: $black;
+}
+
+// Color of the placeholder text
+// Do not group these rules
+*::-webkit-input-placeholder {
+  color: $orange;
+}
+*:-moz-placeholder {
+  color: $orange;
+}
+*::-moz-placeholder {
+  color: $orange;
+}
+*:-ms-input-placeholder {
+  color: $orange;
+}
+
+input:focus::-webkit-input-placeholder
+{
+  color: transparent;
+}
+input::focus:-moz-placeholder {
+  color: transparent;
+}
+input::focus::-moz-placeholder {
+  color: transparent;
+}
+input::focus:-ms-input-placeholder {
+  color: transparent;
 }
 
 form .ng-dirty.ng-invalid {
   border: 2px solid;
-  border-color: red;
+  border-color: $red;
 }
 
 #message {
-  color: red;
+  color: $red;
 }
