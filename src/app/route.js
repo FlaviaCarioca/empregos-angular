@@ -10,18 +10,27 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/components/home/home.html'
+        templateUrl: 'app/components/home/home.html',
+        access: {
+          requiresLogin: false
+        }
       })
       .state('login', {
         url: '/login',
         templateUrl: 'app/components/login/login.template.html',
         controller: 'LoginController',
-        controllerAS: 'loginCtrl'
+        controllerAs: 'loginCtrl',
+        access: {
+          requiresLogin: false
+        }
       })
       .state('registration', {
         url: '/registration',
         templateUrl: 'app/components/user/candidate/registration.template.html',
-        controller: 'RegistrationController'
+        controller: 'RegistrationController',
+        access: { // TODO: This should be an object with permission roles, etc.
+          requiresLogin: true
+        }
       });
 
     $urlRouterProvider.otherwise('/');
