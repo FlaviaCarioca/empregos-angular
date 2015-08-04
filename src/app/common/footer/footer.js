@@ -24,7 +24,7 @@
 	var target = document.body;
 
 	// create an observer instance
-	var observer = new MutationObserver(mutationObjectCallback);
+	//var observer = new MutationObserver(mutationObjectCallback);
 	function mutationObjectCallback(mutationRecordsList) {
 
 	    stickyFooter();

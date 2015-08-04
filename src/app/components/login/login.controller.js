@@ -6,7 +6,7 @@
     .controller('LoginController', loginController);
 
     /** @ngInject */
-    function loginController(LoginService, $scope, $location, $window, $rootScope){
+    function loginController(LoginService, $scope, $location, $rootScope){
       var vm = this;
       vm.auth = {};
       vm.login = login;
@@ -15,7 +15,7 @@
          LoginService.login(this.auth)
           .then(function(success){
             $rootScope.loggedUser = true;
-            $location.path('/registration');
+            $location.path('/dashboard');
           }, function(error){
               $rootScope.loggedUser = false;
 
