@@ -23,7 +23,7 @@
                 vm.message= error.data.error;
               }
               else {
-                vm.message = "There was problem, please try again later.";
+                vm.message = error.data.error || "There was problem, please try again later.";
               }
 
               vm.auth = {}; //clear the fields

@@ -14,6 +14,8 @@
       controller = $controller('LoginController', { $scope: scope });
       scope.loginForm = {};
       loginCredentials = { "username": 'x@x.com', "password": "blah" };
+      
+      controller.auth = loginCredentials;
     }));
 
 
@@ -24,8 +26,6 @@
 
     describe('vm.login', function(){
       it('should login registered user', function() {
-        controller.auth = loginCredentials;
-
         httpMock.expectPOST('http://localhost:3000/v1/auth', { "auth": { "username": 'x@x.com', "password": "blah" } })
                           .respond(200, {'auth_token': 'xxx.www.yyyy'});
 
@@ -38,7 +38,6 @@
       });
 
       it('should return 401 for unregistered user', function(){
-        controller.auth = loginCredentials;
         scope.loginForm = {
           $setPristine: jasmine.createSpy('$setPristine')
         };
@@ -56,6 +55,25 @@
         expect(scope.loginForm.$setPristine).toHaveBeenCalled();
 
       });
+      
+      it('should return generic message for all other errors than 401', function(){
+        scope.loginForm = {
+          $setPristine: jasmine.createSpy('$setPristine')
+        };
+        
+        httpMock.expectPOST('http://localhost:3000/v1/auth', { "auth": { "username": 'x@x.com', "password": "blah" } })
+                          .respond(403, { error: 'Forbidden' });
+                          
+        controller.login();
+        
+        httpMock.flush();
+        
+        expect(rootScope.loggedUser).toBe(false);
+        expect(controller.auth).toEqual({});
+        expect(controller.message).toEqual('Forbidden');
+        expect(scope.loginForm.$setPristine).toHaveBeenCalled();
+      });
+      
     });
   });
 }());
