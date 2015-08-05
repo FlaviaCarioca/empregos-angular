@@ -32,6 +32,8 @@ module.exports = function(config) {
     autoWatch: false,
 
     frameworks: ['jasmine', 'angular-filesort'],
+    
+    exclude: [path.join(conf.paths.src, '/app/common/footer/*')],
 
     angularFilesort: {
       whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
