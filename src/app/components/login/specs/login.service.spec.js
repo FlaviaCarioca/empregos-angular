@@ -2,7 +2,7 @@
   'use strict';
 
   describe('Login Service', function(){
-    var httpMock, http, loginService, env, credentials;
+    var httpMock, loginService, env, credentials;
 
     beforeEach(module('empregosAngular'));
 
@@ -14,9 +14,9 @@
     }));
 
     // Makes sure the backend was able to satisfy the request
-    afterEach(inject(function($httpBackend) {
-        $httpBackend.verifyNoOutstandingExpectation();
-        $httpBackend.verifyNoOutstandingRequest();
+    afterEach(inject(function() {
+        httpMock.verifyNoOutstandingExpectation();
+        httpMock.verifyNoOutstandingRequest();
     }));
 
     it('should return auth token the user when called with valid credentials', function(){
