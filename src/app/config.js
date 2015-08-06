@@ -7,8 +7,10 @@
 
 
   /** @ngInject */
-  function config($logProvider, toastr, $httpProvider) {
+  function config($logProvider, toastr, $httpProvider, $provide) {
     $httpProvider.interceptors.push(httpInterceptor);
+
+    $provide.decorator('$log', logDecorator);
 
     // Enable log
     $logProvider.debugEnabled(true);
@@ -18,6 +20,23 @@
     toastr.options.positionClass = 'toast-top-right';
     toastr.options.preventDuplicates = true;
     toastr.options.progressBar = true;
+  }
+
+  /** ngInject */
+  function logDecorator($delegate) {
+    // Keep track of the original debug method, we'll need it later.
+    var origDebug = $delegate.debug;
+
+    //Intercept the call to $log.debug() so we can add on the timestamp enhancement.
+    $delegate.debug = function () {
+        var args = [].slice.call(arguments);
+        args[0] = [moment().format('MMMM Do YYYY, h:mm:ss a'), ': ', args[0]].join('');
+
+        // Send on our enhanced message to the original debug method.
+        origDebug.apply(null, args)
+    };
+
+    return $delegate;
   }
 
   /** ngInject */

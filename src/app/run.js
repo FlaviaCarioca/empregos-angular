@@ -19,7 +19,7 @@
       if (next.access !== undefined && next.access.requiresLogin){
         // Not a logged user, redirect to /login
         if (!$rootScope.loggedUser) {
-          $log.debug("Trying to reach route " + next.url + " without login." )
+          $log.debug("Trying to reach route " + next.url + " without login." );
           $location.path("/");
         }
       }
