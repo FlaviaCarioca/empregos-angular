@@ -3,7 +3,7 @@
    <div id="outside" class="panel">
       <h4>Login</h4>
       <div id="inside" class="panel">
-        <form name="loginForm" class="round-inputs" ng-submit="loginCtrl.login()" ng-controller="LoginController as loginCtrl" novalidate>
+        <form name="loginForm" class="round-inputs" ng-submit="loginCtrl.login()" novalidate>
           <p id="message" ng-if="loginCtrl.message">{{loginCtrl.message}}</p>
           <div class="row">
             <div ng-messages="loginForm.username.$error" role="alert" ng-show="!loginForm.username.$pristine" >
