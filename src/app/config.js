@@ -8,12 +8,12 @@
 
   /** @ngInject */
   function config($logProvider, toastr, $httpProvider, $provide) {
+    // Enable log
+    $logProvider.debugEnabled(true);
+
     $httpProvider.interceptors.push(httpInterceptor);
 
     $provide.decorator('$log', logDecorator);
-
-    // Enable log
-    $logProvider.debugEnabled(true);
 
     // Set options third-party lib
     toastr.options.timeOut = 3000;
@@ -33,11 +33,13 @@
         args[0] = [moment().format('MMMM Do YYYY, h:mm:ss a'), ': ', args[0]].join('');
 
         // Send on our enhanced message to the original debug method.
-        origDebug.apply(null, args)
+        origDebug.apply(null, args);
     };
 
+    $delegate.debug.logs = []; //keeps angular-mocks happy;
     return $delegate;
   }
+
 
   /** ngInject */
   function httpInterceptor($q, $window, $location, $log){
