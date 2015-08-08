@@ -45,12 +45,15 @@ module.exports = function(config) {
     },
 
     browsers : ['PhantomJS'],
+    
+    reporters: ['mocha'],
 
     plugins : [
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
       'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+      'karma-ng-html2js-preprocessor',
+      'karma-mocha-reporter'
     ],
 
     preprocessors: {
