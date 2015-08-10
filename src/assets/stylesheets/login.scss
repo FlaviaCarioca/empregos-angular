@@ -1,20 +1,23 @@
-#outside{
-  background-color: $white;
-}
-
-#inside{
-  background-color: $silver;
+// Panels surrounding the input fields
+.panel{
+  .outside{
+    background-color: $white;
+  }
+  .inside{
+    background-color: $silver;
+  }
 }
 
 @media #{$small-only} {
-  #outside{
+  .outside{
     border-style: none;
     border-color: $red;
   }
 }
 
+// Input fields
 .round-inputs input {
-  border-radius: 1000px;
+  border-radius: 62.5rem;
   background-color: $purple;
   height: 3.3125rem;
   text-align: center;
@@ -54,11 +57,13 @@ input::focus:-ms-input-placeholder {
   color: transparent;
 }
 
-form .ng-dirty.ng-invalid {
-  border: 2px solid;
-  border-color: $red;
-}
-
-#message {
-  color: $red;
+// Form error messages
+form {
+  .ng-dirty.ng-invalid {
+    border: .125rem solid;
+    border-color: $red;
+  }
+  p.error {
+    color: $red;
+  }
 }

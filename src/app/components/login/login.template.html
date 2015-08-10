@@ -1,23 +1,23 @@
 <div class="row">
   <div class="medium-6 medium-offset-3 small-8 small-offset-1 text-center columns">
-   <div id="outside" class="panel">
+   <div class="panel outside">
       <h4>Login</h4>
-      <div id="inside" class="panel">
+      <div class="panel inside">
         <form name="loginForm" class="round-inputs" ng-submit="loginCtrl.login()" novalidate>
-          <p id="message" ng-if="loginCtrl.message">{{loginCtrl.message}}</p>
+          <p class="error" ng-if="loginCtrl.message">{{loginCtrl.message}}</p>
           <div class="row">
             <div ng-messages="loginForm.username.$error" role="alert" ng-show="!loginForm.username.$pristine" >
-              <p ng-message="required">Please enter an email address.</p>
-              <p ng-message="email">Please enter a correct email address.</p>
+              <p class="error" ng-message="required">Please enter an email address.</p>
+              <p class="error" ng-message="email">Please enter a correct email address.</p>
             </div>
             <div ng-messages="loginForm.password.$error" role="alert" ng-show="!loginForm.password.$pristine">
-              <p ng-message="required">Please enter your password.</p>
+              <p class="error" ng-message="required">Please enter your password.</p>
             </div>
             <div class="small-12 columns">
               <input type="email" name="username" placeholder="Email" ng-model="loginCtrl.auth.username" required  ng-model-options="{ updateOn: 'blur' }">
             </div>
             <div class="small-12 columns">
-              <input type="password" name="password" placeholder="Password" ng-model="loginCtrl.auth.password" required  ng-model-options="{ updateOn: 'blur' }">
+              <input type="password" name="password" placeholder="Password" ng-model="loginCtrl.auth.password" required>
             </div>
             <div class="small-12 columns">
               <button type="submit" ng-disabled="loginForm.$invalid" class="button round">Submit</button>
