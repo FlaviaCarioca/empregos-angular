@@ -11,7 +11,18 @@
 @media #{$small-only} {
   .outside{
     border-style: none;
+    background-color: $silver;
+  }
+}
+
+// Form error messages
+form {
+  .ng-dirty.ng-invalid {
+    border: .125rem solid;
     border-color: $red;
+  }
+  p.error {
+    color: $red;
   }
 }
 
@@ -55,15 +66,4 @@ input::focus::-moz-placeholder {
 }
 input::focus:-ms-input-placeholder {
   color: transparent;
-}
-
-// Form error messages
-form {
-  .ng-dirty.ng-invalid {
-    border: .125rem solid;
-    border-color: $red;
-  }
-  p.error {
-    color: $red;
-  }
 }
