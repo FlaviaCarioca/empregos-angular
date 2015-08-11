@@ -1,15 +1,15 @@
 // Panels surrounding the input fields
 .panel{
-  .outside{
+  &.outter{
     background-color: $white;
   }
-  .inside{
+  &.inner{
     background-color: $silver;
   }
 }
 
 @media #{$small-only} {
-  .outside{
+  .panel.outter{
     border-style: none;
     background-color: $silver;
   }
@@ -21,7 +21,7 @@ form {
     border: .125rem solid;
     border-color: $red;
   }
-  p.error {
+  p .error {
     color: $red;
   }
 }
