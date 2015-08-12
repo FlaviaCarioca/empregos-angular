@@ -24,12 +24,20 @@
           requiresLogin: false
         }
       })
+      .state('pre_reg', {
+        url: '/pre-registration',
+        templateUrl: 'app/components/registration/preregistration.template.html',
+        //controller: 'PreregistrationController',
+        access:{
+          requiresLogin: false
+        }
+      })
       .state('registration', {
         url: '/registration',
         templateUrl: 'app/components/user/candidate/registration.template.html',
         controller: 'RegistrationController',
-        access: { // TODO: This should be an object with permission roles, etc.
-          requiresLogin: true
+        access: { // TODO: This prob should be an object with permission roles, etc.
+          requiresLogin: false
         }
       });
 

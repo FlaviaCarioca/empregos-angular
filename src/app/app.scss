@@ -28,6 +28,48 @@ body {
   background-color: $silver;
 }
 
+// Input fields
+.round-inputs input {
+  border-radius: 62.5rem;
+  background-color: $purple;
+  height: 3.3125rem;
+  text-align: center;
+  color: $orange;
+}
+
+.round-inputs input:focus {
+  color: $black;
+}
+
+// Color of the placeholder text
+// Do not group these rules
+*::-webkit-input-placeholder {
+  color: $orange;
+}
+*:-moz-placeholder {
+  color: $orange;
+}
+*::-moz-placeholder {
+  color: $orange;
+}
+*:-ms-input-placeholder {
+  color: $orange;
+}
+
+input:focus::-webkit-input-placeholder
+{
+  color: transparent;
+}
+input::focus:-moz-placeholder {
+  color: transparent;
+}
+input::focus::-moz-placeholder {
+  color: transparent;
+}
+input::focus:-ms-input-placeholder {
+  color: transparent;
+}
+
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

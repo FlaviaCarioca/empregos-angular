@@ -1,0 +1,35 @@
+<div class="center row" id="tabbing">
+  <div class="medium-6 medium-offset-3 small-8 small-offset-1 text-center columns">
+    <ul class="tabs" data-tab>
+      <li class="tab-title active">
+        <a href="#candidate">Candidate</a>
+      </li>
+      <li class="tab-title">
+        <a href="#company">Company</a>
+      </li>
+    </ul>
+    <div class="panel">
+      <div class="tabs-content">
+        <div class="content active" id="candidate">
+          <form class="round-inputs" name="candidate_form" novalidate>
+            <input name="first_name" placeholder="First Name" required type="text">
+            <input name="last_name" placeholder="Last Name" required type="text">
+            <input name="email" placeholder="Email" required type="email">
+            <input min-length="6" name="password" placeholder="Password" required type="password">
+            <button class="button round" ng-disabled="candidate_form.$invalid" type="submit">Get Started</button>
+          </form>
+        </div>
+        <div class="content" id="company">
+          <form class="round-inputs" name="company_form" novalidate>
+            <input name="company_name" placeholder="Company Name" required type="text">
+            <input name="contact_name" placeholder="Contact Name" required type="text">
+            <input name="phone_number" placeholder="Contact Number" required type="text">
+            <input name="email" placeholder="Email" required type="email">
+            <input min-length="6" name="password" placeholder="Password" required type="password">
+            <button class="button round" ng-disabled="company_form.$invalid" type="submit">Apply</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
