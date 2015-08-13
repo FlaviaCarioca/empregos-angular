@@ -3,8 +3,15 @@
 
   angular
     .module('empregosAngular')
-    .config(config);
+    .config(config)/
+  //  .run(loadFoundation); // loads the Foundation framework
 
+
+  //  function loadFoundation ($rootScope) {
+  //    $rootScope.$on('$viewContentLoaded', function () {
+  //      $(document).foundation();
+  //    });
+  // }
 
   /** @ngInject */
   function config($logProvider, toastr, $httpProvider, $provide) {

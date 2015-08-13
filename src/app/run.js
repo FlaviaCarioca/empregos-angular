@@ -4,15 +4,19 @@
   angular
     .module('empregosAngular')
     .run(runBlock)
-    .run(secureRoutes);
+    .run(secureRoutes)
+    .run(loadFoundation); // loads the Foundation framework
+
+
+    function loadFoundation ($rootScope) {
+      $rootScope.$on('$viewContentLoaded', function () {
+        $(document).foundation();
+      });
+   }
 
   /** @ngInject */
-  function runBlock($log, $rootScope, $timeout) {
+  function runBlock($log) {
     $log.debug('runBlock end');
-    // Wire up foundation for each view load
-    // $rootScope.$on('$viewContentLoaded', function () {
-    //   $(document).foundation();
-    // });
   }
 
   /** @ngInject */
