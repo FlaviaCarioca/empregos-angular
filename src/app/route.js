@@ -24,10 +24,10 @@
           requiresLogin: false
         }
       })
-      .state('pre_reg', {
+      .state('prereg', {
         url: '/pre-registration',
         templateUrl: 'app/components/registration/preregistration.template.html',
-        //controller: 'PreregistrationController',
+        controller: 'PreregistrationController',
         access:{
           requiresLogin: false
         }

@@ -8,7 +8,8 @@
   function empregosFooter(){
       var directive = {
         restrict: 'E',
-        templateUrl: '/app/common/footer/footer.html'
+        templateUrl: '/app/common/footer/footer.html',
+        controller
       };
 
       return directive;

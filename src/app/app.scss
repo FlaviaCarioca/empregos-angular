@@ -25,7 +25,12 @@
 }
 
 body {
-  background-color: $silver;
+  background-color: $white-smoke;
+}
+
+.panel {
+  border: 1px solid $orange;
+  background-color: $smoke;
 }
 
 // Input fields

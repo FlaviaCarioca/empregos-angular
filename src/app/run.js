@@ -7,13 +7,12 @@
     .run(secureRoutes);
 
   /** @ngInject */
-  function runBlock($log, $rootScope) {
+  function runBlock($log, $rootScope, $timeout) {
     $log.debug('runBlock end');
-
     // Wire up foundation for each view load
-    $rootScope.$on('$viewContentLoaded', function () {
-      $(document).foundation();
-    });
+    // $rootScope.$on('$viewContentLoaded', function () {
+    //   $(document).foundation();
+    // });
   }
 
   /** @ngInject */
