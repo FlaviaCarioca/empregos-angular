@@ -28,6 +28,7 @@
         url: '/pre-registration',
         templateUrl: 'app/components/registration/preregistration.template.html',
         controller: 'PreregistrationController',
+        controllerAs: 'preRegCtrl',
         access:{
           requiresLogin: false
         }

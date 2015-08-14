@@ -3,18 +3,28 @@
 
   angular
     .module('empregosAngular')
-    .controller('PreregistrationController', preregistrationController);
+    .controller('PreregistrationController', preRegistrationController);
 
     /** @ngInject */
-    function preregistrationController($scope, $log){
+  function preRegistrationController($scope, $location, $log, preRegistrationService){
       var vm = this;
       vm.candidateInfo = {};
 
-      vm.preregister = preregister;
+      vm.registerCandidate = registerCandidate;
 
-      function preregister(){
-
+      function registerCandidate(){
+        $log.debug('registerCandidate method in controller');
+        //call API
+        preRegistrationService.registerCandidate(candidateInfo)
+          .then(function(sucess){
+            // Go to the registration details page
+            $location.path('/registration');
+            $log.debug(success);
+          })
+          .catch(function(error){
+            vm.message = error.data.error || "There was problem, please try registering again later.";
+            $log.debug(error);
+          });
       }
-
     }
 })();

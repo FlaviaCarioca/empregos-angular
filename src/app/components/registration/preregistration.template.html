@@ -1,38 +1,50 @@
-<div class="center row" id="tabbing">
-  <div class="medium-6 medium-offset-3 small-8 small-offset-1 text-center columns">
+<div class="centered row">
+  <div class="small-3 columns"><p></p></div>
+  <div class="small-6 text-center columns">
     <ul class="tabs" data-tab>
       <li class="tab-title active">
-        <a href="#candidate">Candidate</a>
+        <a href="#candidateTab">Candidate</a>
       </li>
       <li class="tab-title">
-        <a href="#company">Company</a>
+        <a href="#companyTab">Company</a>
       </li>
     </ul>
-    <div class="panel">
+    <div class="prereg panel">
       <div class="tabs-content">
-        <div class="content active" id="candidate">
-          <form class="round-inputs" name="candidate_form" novalidate>
-            <input name="first_name" placeholder="First Name" required type="text">
-            <input name="last_name" placeholder="Last Name" required type="text">
-            <input name="email" placeholder="Email" required type="email">
-            <input min-length="6" name="password" placeholder="Password" required type="password">
-            <button class="button round" ng-disabled="candidate_form.$invalid" type="submit">Get Started</button>
+        <div class="content active" id="candidateTab">
+          <div ng-messages="candidateForm.email.$error" role="alert" ng-hide="candidateForm.email.$pristine" >
+            <p class="error" ng-message="required email">Please enter a valid email address.</p>
+          </div>
+          <div ng-messages="candidateForm.password.$error" role="alert" ng-hide="candidateForm.password.$pristine">
+            <p class="error" ng-message="required">Please enter a password</p>
+          </div>
+          <div ng-messages="candidateForm.firstName.$error" role="alert" ng-hide="candidateForm.firstName.$pristine">
+            <p class="error" ng-message="required">Please enter your first name</p>
+          </div>
+          <div ng-messages="candidateForm.lastName.$error" role="alert" ng-hide="candidateForm.lastName.$pristine">
+            <p class="error" ng-message="required">Please enter your last name</p>
+          </div>
+          <form name="candidateForm"class="round-inputs" ng-submit="preRegCtrl.registerCandidate()" ng-model-options="{ updateOn: 'blur' }" novalidate>
+            <input type="text" name="firstName" placeholder="First Name" ng-model="preRegCtrl.candidateInfo.first_name" ng-model-options="{updateOn: 'blur'}" required>
+            <input type="text" name="lastName" placeholder="Last Name" ng-model="preRegCtrl.candidateInfo.last_name" ng-model-options="{updateOn: 'blur'}" required>
+            <input type="email" name="email" placeholder="Email" ng-model="preRegCtrl.candidateInfo.email" ng-model-options="{updateOn:'blur'}" required >
+            <input type="password" name="password" placeholder="Password" ng-model="preRegCtrl.candidateInfo.password" min-length="6" required>
+            <input type="hidden" name="type" value="candidate" ng-model="preRegCtrl.candidateInfo.type">
+            <button type="submit" class="button round" ng-disabled="candidateForm.$invalid">Get Started</button>
           </form>
         </div>
-        <div class="content" id="company">
-          <form class="round-inputs" name="company_form" novalidate>
-            <input name="company_name" placeholder="Company Name" required type="text">
-            <input name="contact_name" placeholder="Contact Name" required type="text">
-            <input name="phone_number" placeholder="Contact Number" required type="text">
-            <input name="email" placeholder="Email" required type="email">
-            <input min-length="6" name="password" placeholder="Password" required type="password">
-            <button class="button round" ng-disabled="company_form.$invalid" type="submit">Apply</button>
+        <div class="content" id="companyTab">
+          <form name="companyForm" class="round-inputs" novalidate>
+            <input type="text" name="company_name" placeholder="Company Name" required>
+            <input type="text" name="contact_name" placeholder="Contact Name" required>
+            <input type="text" name="phone_number" placeholder="Contact Number" required>
+            <input type="email" name="email" placeholder="Email" required >
+            <input type="password" name="password" placeholder="Password" min-length="6" required>
+            <button type="submit" class="button round" ng-disabled="companyForm.$invalid">Apply</button>
           </form>
         </div>
       </div>
     </div>
   </div>
+  <div class="small-3 columns"><p></p></div>
 </div>
-<script type="text/javascript">
-    $('#tabbing').foundation();
-</script>

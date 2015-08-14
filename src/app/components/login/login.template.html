@@ -6,11 +6,11 @@
         <form name="loginForm" class="round-inputs" ng-submit="loginCtrl.login()" novalidate>
           <p class="error" ng-if="loginCtrl.message">{{loginCtrl.message}}</p>
           <div class="row">
-            <div ng-messages="loginForm.username.$error" role="alert" ng-show="!loginForm.username.$pristine" >
+            <div ng-messages="loginForm.username.$error" role="alert" ng-hide="loginForm.username.$pristine" >
               <p class="error" ng-message="required">Please enter an email address.</p>
               <p class="error" ng-message="email">Please enter a correct email address.</p>
             </div>
-            <div ng-messages="loginForm.password.$error" role="alert" ng-show="!loginForm.password.$pristine">
+            <div ng-messages="loginForm.password.$error" role="alert" ng-hide="loginForm.password.$pristine">
               <p class="error" ng-message="required">Please enter your password.</p>
             </div>
             <div class="small-12 columns">

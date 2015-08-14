@@ -1,27 +1,16 @@
-// Panels surrounding the input fields
-.panel{
-  &.outter{
-    background-color: $white;
-  }
-  &.inner{
-    background-color: $silver;
-  }
-}
+// // Panels surrounding the input fields
+// .panel{
+//   &.outter{
+//     background-color: $white;
+//   }
+//   &.inner{
+//     background-color: $silver;
+//   }
+// }
 
 @media #{$small-only} {
   .panel.outter{
     border-style: none;
     background-color: $silver;
-  }
-}
-
-// Form error messages
-form {
-  .ng-dirty.ng-invalid {
-    border: .125rem solid;
-    border-color: $red;
-  }
-  p.error {
-    color: $red;
   }
 }

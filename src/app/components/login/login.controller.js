@@ -6,13 +6,13 @@
     .controller('LoginController', loginController);
 
     /** @ngInject */
-    function loginController(LoginService, $scope, $location, $rootScope, $log){
+    function loginController($scope, $location, $rootScope, $log, LoginService){
       var vm = this;
       vm.auth = {};
       vm.login = login;
 
       function login(){
-         LoginService.login(this.auth)
+         LoginService.login(vm.auth)
           .then(function(success){
             $rootScope.loggedUser = true;
             $location.path('/dashboard');
@@ -21,7 +21,7 @@
            .catch(function(error){
               $rootScope.loggedUser = false;
               if(error.status === 401){
-                vm.message= error.data.error;
+                vm.message = error.data.error;
               }
               else {
                 vm.message = error.data.error || "There was problem, please try again later.";

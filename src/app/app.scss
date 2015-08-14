@@ -25,12 +25,23 @@
 }
 
 body {
-  background-color: $white-smoke;
+  background-color: $smoke;
 }
 
 .panel {
   border: 1px solid $orange;
-  background-color: $smoke;
+  background-color: $white-smoke;
+}
+
+// Form error messages
+form {
+  .ng-dirty.ng-invalid {
+    border: .125rem solid;
+    border-color: $red;
+  }
+  p.error {
+    color: $red;
+  }
 }
 
 // Input fields
