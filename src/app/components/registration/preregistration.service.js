@@ -6,11 +6,10 @@
     .factory('preRegistrationService', preRegistrationService);
 
     /*ngInject*/
-    function preRegistrationService($http, ENV){
+    function preRegistrationService($http, ENV, $log){
       return{
-        preRegistration: function(candidateInfo){
-          $log.debug('register candidate metho in service');
-          var candidateInfo = JSON.stringify({ candidate_info: candidateInfo });
+        registerCandidate: function(candidateInfo){
+          var candidateInfo = JSON.stringify({ candidate: candidateInfo });
           $log.debug(candidateInfo);
           // Returns a promise to the controller
           return $http({method: 'POST', url: ENV.baseApi + '/candidate/create', data: candidateInfo});

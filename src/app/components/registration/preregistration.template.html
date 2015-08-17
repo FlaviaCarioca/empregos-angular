@@ -26,10 +26,10 @@
           <div ng-hide="candidateForm.lastName.$pristine" ng-messages="candidateForm.lastName.$error" role="alert">
             <p class="error" ng-message="required">Please enter your last name</p>
           </div>
+          <input type="text" name="firstName" ng-model-options="{updateOn: 'blur'}" ng-model="preRegCtrl.candidateInfo.first_name" placeholder="First Name" required>
           <input type="text" name="lastName" ng-model-options="{updateOn: 'blur'}" ng-model="preRegCtrl.candidateInfo.last_name" placeholder="Last Name" required>
           <input type="email" name="email" ng-model-options="{updateOn:'blur'}" ng-model="preRegCtrl.candidateInfo.email" placeholder="Email" required>
           <input type="password" min-length="6" name="password" ng-model="preRegCtrl.candidateInfo.password" placeholder="Password" required>
-          <input type="text" name="type" ng-model="preRegCtrl.candidateInfo.type" type="hidden" value="candidate">
           <button type="submit" class="button round" ng-disabled="candidateForm.$invalid">Get Started</button>
         </form>
       </div>
