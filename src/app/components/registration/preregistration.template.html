@@ -1,5 +1,7 @@
 <div class="centered row">
-  <div class="small-3 columns"><p></p></div>
+  <div class="small-3 columns">
+    <p></p>
+  </div>
   <div class="small-6 text-center columns">
     <ul class="tabs" data-tab>
       <li class="tab-title active">
@@ -9,42 +11,41 @@
         <a href="#companyTab">Company</a>
       </li>
     </ul>
-    <div class="prereg panel">
-      <div class="tabs-content">
-        <div class="content active" id="candidateTab">
-          <div ng-messages="candidateForm.email.$error" role="alert" ng-hide="candidateForm.email.$pristine" >
+    <div class="tabs-content">
+      <div class="content active" id="candidateTab">
+        <form class="round-inputs" name="candidateForm" ng-model-options="{ updateOn: 'blur' }" ng-submit="preRegCtrl.registerCandidate()" novalidate>
+          <div ng-hide="candidateForm.email.$pristine" ng-messages="candidateForm.email.$error" role="alert">
             <p class="error" ng-message="required email">Please enter a valid email address.</p>
           </div>
-          <div ng-messages="candidateForm.password.$error" role="alert" ng-hide="candidateForm.password.$pristine">
+          <div ng-hide="candidateForm.password.$pristine" ng-messages="candidateForm.password.$error" role="alert">
             <p class="error" ng-message="required">Please enter a password</p>
           </div>
-          <div ng-messages="candidateForm.firstName.$error" role="alert" ng-hide="candidateForm.firstName.$pristine">
+          <div ng-hide="candidateForm.firstName.$pristine" ng-messages="candidateForm.firstName.$error" role="alert">
             <p class="error" ng-message="required">Please enter your first name</p>
           </div>
-          <div ng-messages="candidateForm.lastName.$error" role="alert" ng-hide="candidateForm.lastName.$pristine">
+          <div ng-hide="candidateForm.lastName.$pristine" ng-messages="candidateForm.lastName.$error" role="alert">
             <p class="error" ng-message="required">Please enter your last name</p>
           </div>
-          <form name="candidateForm"class="round-inputs" ng-submit="preRegCtrl.registerCandidate()" ng-model-options="{ updateOn: 'blur' }" novalidate>
-            <input type="text" name="firstName" placeholder="First Name" ng-model="preRegCtrl.candidateInfo.first_name" ng-model-options="{updateOn: 'blur'}" required>
-            <input type="text" name="lastName" placeholder="Last Name" ng-model="preRegCtrl.candidateInfo.last_name" ng-model-options="{updateOn: 'blur'}" required>
-            <input type="email" name="email" placeholder="Email" ng-model="preRegCtrl.candidateInfo.email" ng-model-options="{updateOn:'blur'}" required >
-            <input type="password" name="password" placeholder="Password" ng-model="preRegCtrl.candidateInfo.password" min-length="6" required>
-            <input type="hidden" name="type" value="candidate" ng-model="preRegCtrl.candidateInfo.type">
-            <button type="submit" class="button round" ng-disabled="candidateForm.$invalid">Get Started</button>
-          </form>
-        </div>
-        <div class="content" id="companyTab">
-          <form name="companyForm" class="round-inputs" novalidate>
-            <input type="text" name="company_name" placeholder="Company Name" required>
-            <input type="text" name="contact_name" placeholder="Contact Name" required>
-            <input type="text" name="phone_number" placeholder="Contact Number" required>
-            <input type="email" name="email" placeholder="Email" required >
-            <input type="password" name="password" placeholder="Password" min-length="6" required>
-            <button type="submit" class="button round" ng-disabled="companyForm.$invalid">Apply</button>
-          </form>
-        </div>
+          <input type="text" name="lastName" ng-model-options="{updateOn: 'blur'}" ng-model="preRegCtrl.candidateInfo.last_name" placeholder="Last Name" required>
+          <input type="email" name="email" ng-model-options="{updateOn:'blur'}" ng-model="preRegCtrl.candidateInfo.email" placeholder="Email" required>
+          <input type="password" min-length="6" name="password" ng-model="preRegCtrl.candidateInfo.password" placeholder="Password" required>
+          <input type="text" name="type" ng-model="preRegCtrl.candidateInfo.type" type="hidden" value="candidate">
+          <button type="submit" class="button round" ng-disabled="candidateForm.$invalid">Get Started</button>
+        </form>
+      </div>
+      <div class="content" id="companyTab">
+        <form class="round-inputs" name="companyForm" novalidate>
+          <input type="text" name="company_name" placeholder="Company Name" required>
+          <input type="text" name="contact_name" placeholder="Contact Name" required>
+          <input type="text" name="phone_number" placeholder="Contact Number" required>
+          <input type="email" name="email" placeholder="Email" required  type="email">
+          <input type="password" min-length="6" name="password" placeholder="Password" required>
+          <button type="submit" class="button round" ng-disabled="companyForm.$invalid">Apply</button>
+        </form>
       </div>
     </div>
   </div>
-  <div class="small-3 columns"><p></p></div>
+  <div class="small-3 columns">
+    <p></p>
+  </div>
 </div>
