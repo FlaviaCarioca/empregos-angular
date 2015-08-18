@@ -15,8 +15,13 @@
          LoginService.login(vm.auth)
           .then(function(success){
             $rootScope.loggedUser = true;
-            $location.path('/dashboard');
-            $log.debug(success);
+            if (success.data.user_type === 'Candidate'){
+              $location.path('/candidate');
+            } else {
+              $location.path('/company');
+            }
+
+            console.log(success.data);
            })
            .catch(function(error){
               $rootScope.loggedUser = false;

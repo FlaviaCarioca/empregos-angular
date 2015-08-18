@@ -33,12 +33,13 @@
           requiresLogin: false
         }
       })
-      .state('registration', {
-        url: '/registration',
-        templateUrl: 'app/components/user/candidate/registration.template.html',
-        controller: 'RegistrationController',
-        access: { // TODO: This prob should be an object with permission roles, etc.
-          requiresLogin: false
+      .state('candidateRegistration', {
+        url: '/candidate',
+        templateUrl: 'app/components/user/candidate/candidate.template.html',
+        controller: 'CandidateController',
+        controllerAs: 'candidateCtrl',
+        access: {
+          requiresLogin: true
         }
       });
 

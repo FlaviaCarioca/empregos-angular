@@ -17,6 +17,7 @@
         //call API
         preRegistrationService.registerCandidate(vm.candidateInfo)
           .then(function(success){
+            console.log(success.data);
             // Go to the registration details page
             $location.path('/login');
           })

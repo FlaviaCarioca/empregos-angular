@@ -1,0 +1,24 @@
+<form name="candidateForm" class="round inputs" ng-submit="candidateCtrl.updateCandidateProfile()" novalidate>
+  <input type="text" name="title" placeholder="title" ng-model="candidateCtrl.candidateProfile.title">
+  <input type="textarea" name="description" placeholder="description" ng-model="candidateCtrl.candidateProfile.description">
+  <input type="text" name="address" placeholder="address" ng-model="candidateCtrl.candidateProfile.address">
+  <input type="text" name="city" placeholder="city" ng-model="candidateCtrl.candidateProfile.city">
+  <input type="text" name="zip" placeholder="zip" ng-model="candidateCtrl.candidateProfile.zip">
+  <input type="text" name="minimumSalary" placeholder="minimum salary" ng-model="candidateCtrl.candidateProfile.minimum_salary">
+  <input type="text" name="linkedin" placeholder="linkedin" ng-model="candidateCtrl.candidateProfile.linkedin">
+  <input type="text" name="github" placeholder="github" ng-model="candidateCtrl.candidateProfile.github">
+  <legend>Willing to relocate?</legend>
+  <input type="radio" ng-model="candidateCtrl.candidateProfile.can_relocate" ng-value="true"> Yes
+  <input type="radio" ng-model="candidateCtrl.candidateProfile.can_relocate" ng-value="false"> No
+  <legend>Remote?</legend>
+  <input type="radio" ng-model="candidateCtrl.candidateProfile.can_remote" ng-value="true"> Yes
+  <input type="radio" ng-model="candidateCtrl.candidateProfile.can_remote" ng-value="false"> No
+  <legend>Visa Status</legend>
+  <input type="radio" ng-model="candidateCtrl.candidateProfile.is_visa_needed" ng-value="true"> Citizen/Green Card Holder
+  <input type="radio" ng-model="candidateCtrl.candidateProfile.is_visa_needed" ng-value="false"> Need Sponsorship
+  <button type="submit" class="button round">Submit</button>
+</form>
+
+
+  <!-- t.integer  "specialization_id"
+  t.integer  "company_size_id" -->
