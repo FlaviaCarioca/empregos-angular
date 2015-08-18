@@ -21,8 +21,7 @@
             $location.path('/login');
           })
           .catch(function(error){
-                        console.log(error.data);
-            vm.message = error.data.error || "There was problem, please try registering again later.";
+            vm.message = "There was problem, please try registering again later";
           });
        }
     }
