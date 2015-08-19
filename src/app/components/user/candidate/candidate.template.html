@@ -43,8 +43,8 @@
                     <legend>Willing to relocate?</legend>
                   </div>
                   <div class="small-6 columns">
-                    <input id="on-off" type="checkbox" checked>
-                      <label for="on-off">
+                    <input id="relocation" type="checkbox" ng-model="candidateCtrl.candidateProfile.can_relocate">
+                      <label for="relocation">
                         <span class="switch-on">Yes</span>
                         <span class="switch-off">No</span>
                     </label>
@@ -55,11 +55,11 @@
               <div class="switch round">
                 <div class="row">
                   <div class="small-6 columns">
-                    <legend>Willing to work Remotely?</legend>
+                    <legend>Willing to work remotely?</legend>
                   </div>
                   <div class="small-6 columns">
-                    <input id="yes-no" type="checkbox" checked>
-                      <label for="yes-no">
+                    <input id="remote" type="checkbox" ng-model="candidateCtrl.candidateProfile.can_remote">
+                      <label for="remote">
                         <span class="switch-on">Yes</span>
                         <span class="switch-off">No</span>
                     </label>
@@ -68,21 +68,17 @@
               </div>
             <!-- </div>
             <div class="small-12 columns"> -->
-              <div class="row collapse foundation-radio-button-row">
-                <div class="small-4 columns">
-                  <legend>Visa Status</legend>
+            <div class="switch round">
+              <div class="row">
+                <div class="small-6 columns">
+                  <legend>Need work visa?</legend>
                 </div>
-                <div class="small-4 columns">
-                  <div class="foundation-radio-button">
-                    <input class="button xsmall expand" name="noVisa" ng-model="candidateCtrl.candidateProfile.is_visa_needed" ng-value="false" type="radio">
-                    <label for="noVisa">Citizen/Green Card Holder</label>
-                  </div>
-                </div>
-                <div class="small-4 columns">
-                  <div class="foundation-radio-button">
-                    <input class="button xsmall expand" name="yesVisa" ng-model="candidateCtrl.candidateProfile.is_visa_needed" ng-value="true" type="radio">
-                    <label for="yesVisa">Need Sponshorship</label>
-                  </div>
+                <div class="small-6 columns">
+                  <input id="visa" type="checkbox" ng-model="candidateCtrl.candidateProfile.is_visa_needed">
+                    <label for="visa">
+                      <span class="switch-on">Yes</span>
+                      <span class="switch-off">No</span>
+                  </label>
                 </div>
               </div>
             </div>

@@ -8,11 +8,14 @@
     /*ngInject*/
     function candidateController($scope, $log, candidateService){
       var vm = this;
-      vm.candidateProfile = {};
+      vm.candidateProfile = {
+        'can_relocate': false
+      };
 
       vm.updateCandidateProfile =  updateCandidateProfile;
 
       function updateCandidateProfile(){
+        console.log("in controller");
         console.log(vm.candidateProfile);
         candidateService.updateCandidateProfile(vm.candidateProfile)
           .then(function(success){
