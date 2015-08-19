@@ -39,7 +39,7 @@
         controller: 'CandidateController',
         controllerAs: 'candidateCtrl',
         access: {
-          requiresLogin: true
+          requiresLogin: false//true
         }
       });
 
