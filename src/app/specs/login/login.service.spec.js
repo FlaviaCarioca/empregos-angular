@@ -19,17 +19,19 @@
         httpMock.verifyNoOutstandingRequest();
     }));
 
-    it('should return auth token the user when called with valid credentials', function(){
-      var response = { 'auth_token': 'xxx.www.yyyy' };
-      var auth = { 'auth': credentials };
+    describe('login', function(){
+      it('should return auth token the user when called with valid credentials', function(){
+        var response = { 'auth_token': 'xxx.www.yyyy' };
+        var auth = { 'auth': credentials };
 
-      httpMock.expectPOST(env.baseUrl + '/auth', auth).respond(200, response);
+        httpMock.expectPOST(env.baseUrl + '/auth', auth).respond(200, response);
 
-      var promise = loginService.login(credentials);
-      httpMock.flush();
+        var promise = loginService.login(credentials);
+        httpMock.flush();
 
-      promise.then(function(success){
-        expect(success.data).toEqual(response);
+        promise.then(function(success){
+          expect(success.data).toEqual(response);
+        });
       });
     });
   });

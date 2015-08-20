@@ -3,7 +3,7 @@
 
   angular
     .module('empregosAngular')
-    .factory('registrationService', registrationService);
+    .factory('RegistrationService', registrationService);
 
     /*ngInject*/
     function registrationService($http, ENV, $log){

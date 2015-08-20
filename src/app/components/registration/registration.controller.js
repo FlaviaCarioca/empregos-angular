@@ -6,7 +6,7 @@
     .controller('RegistrationController', registrationController);
 
     /** @ngInject */
-  function registrationController($scope, $location, $log, registrationService){
+  function registrationController($scope, $location, $log, RegistrationService){
       var vm = this;
       vm.candidateInfo = {
         user_type: 'candidate'
@@ -15,7 +15,7 @@
 
       function registerCandidate(){
         //call API
-        registrationService.registerCandidate(vm.candidateInfo)
+        RegistrationService.registerCandidate(vm.candidateInfo)
           .then(function(success){
             console.log(success.data);
             // Go to the registration details page

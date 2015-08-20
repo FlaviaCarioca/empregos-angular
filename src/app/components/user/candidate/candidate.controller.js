@@ -22,7 +22,8 @@
             $log.debug("Success: candidateRegistrationController.updateCandidateProfile");
           })
           .catch(function(error){
-            $log.debug("Error: candidateRegistrationController.updateCandidateProfile" + error.data);
+            $log.debug("Error: candidateRegistrationController.updateCandidateProfile" + error.data.error);
+            vm.message = error.data.error ||"There was problem, please try updating your profile again later";
           });
       }
     }
