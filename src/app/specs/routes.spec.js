@@ -25,5 +25,21 @@
       expect(state.current.controllerAs).toEqual('loginCtrl');
       expect(state.current.templateUrl).toEqual('app/components/login/login.template.html');
     });
+
+    it('pre registration should be defined with correct controller and templateUrl', function(){
+      location.path('/pre-registration');
+      rootScope.$digest();
+      expect(state.current.controller).toEqual('RegistrationController');
+      expect(state.current.controllerAs).toEqual('regCtrl');
+      expect(state.current.templateUrl).toEqual('app/components/registration/registration.template.html');
+    });
+
+    it('candidate profile should be define with correct controller and templateUrl', function(){
+      location.path('/candidate');
+      rootScope.$digest();
+      expect(state.current.controller).toEqual('CandidateController');
+      expect(state.current.controllerAs).toEqual('candidateCtrl');
+      expect(state.current.templateUrl).toEqual('app/components/user/candidate/candidate.template.html');
+    });
   });
 })();

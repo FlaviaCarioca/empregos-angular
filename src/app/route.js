@@ -26,9 +26,9 @@
       })
       .state('prereg', {
         url: '/pre-registration',
-        templateUrl: 'app/components/registration/preregistration.template.html',
-        controller: 'PreregistrationController',
-        controllerAs: 'preRegCtrl',
+        templateUrl: 'app/components/registration/registration.template.html',
+        controller: 'RegistrationController',
+        controllerAs: 'regCtrl',
         access:{
           requiresLogin: false
         }

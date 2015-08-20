@@ -32,7 +32,7 @@ module.exports = function(config) {
     autoWatch: false,
 
     frameworks: ['jasmine', 'angular-filesort'],
-    
+
     exclude: [path.join(conf.paths.src, '/app/common/footer/*')],
 
     angularFilesort: {
@@ -45,19 +45,27 @@ module.exports = function(config) {
     },
 
     browsers : ['PhantomJS'],
-    
-    reporters: ['mocha'],
+
+    reporters: ['mocha', 'coverage'],
 
     plugins : [
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
       'karma-jasmine',
       'karma-ng-html2js-preprocessor',
-      'karma-mocha-reporter'
+      'karma-mocha-reporter',
+      'karma-coverage'
     ],
 
     preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+      'src/**/*.html': ['ng-html2js'],
+      'src/**/*.js': ['coverage']
+    },
+
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
     }
   };
 

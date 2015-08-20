@@ -2,7 +2,7 @@
   'use strict';
 
   describe('LoginController', function(){
-    var httpMock, scope, rootScope, location, controller, loginCredentials, url;
+    var httpMock, scope, rootScope, location, controller, loginCredentials, url, candidate_type;
 
     beforeEach(module('empregosAngular'));
 
@@ -15,6 +15,7 @@
       scope.loginForm = {};
       loginCredentials = { "username": 'x@x.com', "password": "blah" };
       controller.auth = loginCredentials;
+      candidate_type = 'Candidate';
       url = 'http://localhost:3000/v1/auth';
     }));
 
@@ -26,14 +27,15 @@
 
     describe('vm.login', function(){
       it('should login registered user', function() {
-        httpMock.expectPOST(url, { "auth": loginCredentials }).respond(200, {'auth_token': 'xxx.www.yyyy'});
+        httpMock.expectPOST(url, { "auth": loginCredentials }).respond(200, { 'auth_token': 'xxx.www.yyyy',
+                                                                             'user_type': candidate_type });
 
         controller.login();
 
         httpMock.flush();
 
         expect(rootScope.loggedUser).toBe(true);
-        expect(location.path()).toBe('/dashboard');
+        expect(location.path()).toBe('/candidate');
       });
 
       it('should return 401 for unregistered user', function(){
