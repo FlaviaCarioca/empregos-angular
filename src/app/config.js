@@ -39,7 +39,6 @@
     return $delegate;
   }
 
-
   /** ngInject */
   function httpInterceptor($q, $window, $location, $log){
     return {
@@ -57,7 +56,7 @@
             $window.sessionStorage.setItem('token', response.data.auth_token);
           }
 
-          if (response.status === 401) {
+          if (response.status !== 200) {
               // Remove token if unauthorized response
               $window.sessionStorage.removeItem('token');
           }

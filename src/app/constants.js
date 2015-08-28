@@ -5,6 +5,6 @@
   angular
     .module('empregosAngular')
     .constant('toastr', toastr)
-    .constant('moment', moment);
-
+    .constant('moment', moment)
+    .constant('USER_TYPE', { 'CANDIDATE': 'Candidate', 'COMPANY': 'Company' });
 })();

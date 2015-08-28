@@ -6,7 +6,7 @@
     .controller('LoginController', loginController);
 
     /** @ngInject */
-    function loginController($scope, $location, $rootScope, $log, LoginService){
+    function loginController($scope, $location, $rootScope, $log, LoginService, USER_TYPE){
       var vm = this;
       vm.auth = {};
       vm.login = login;
@@ -15,7 +15,7 @@
          LoginService.login(vm.auth)
           .then(function(success){
             $rootScope.loggedUser = true;
-            if (success.data.user_type === 'Candidate'){
+            if (success.data.user_type.toUpperCase() === USER_TYPE.CANDIDATE.toUpperCase()){
               $location.path('/candidate');
             } else {
               $location.path('/company');
