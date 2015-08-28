@@ -45,7 +45,7 @@
       it('should return an error if the candidate profile cannot be updated', function(){
         httpMock.expectPUT(url, { candidate: profile }).respond(500, { error: 'Something went wrong. Please try again later' });
 
-        candidateController.updateCandidateProfile();
+        controller.updateCandidateProfile();
 
         httpMock.flush();
 

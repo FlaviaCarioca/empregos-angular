@@ -24,7 +24,6 @@
   function secureRoutes($rootScope, $location, $log) {
     // Make sure the routes a secured. Only logged users can access them.
     $rootScope.$on("$stateChangeStart", function(event, next, current) {
-
       // Used to show or hide the footer
       $rootScope.isHomePage = false;
       if (next.url === '/' ){

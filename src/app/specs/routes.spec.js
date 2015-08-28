@@ -36,7 +36,12 @@
 
     it('candidate profile should be define with correct controller and templateUrl', function(){
       location.path('/candidate');
+      // Setting loggedUser to true to simulate a logged user, otherwise the http interceptor
+      // will redirect to the home page
+      rootScope.loggedUser = true;
+
       rootScope.$digest();
+
       expect(state.current.controller).toEqual('CandidateController');
       expect(state.current.controllerAs).toEqual('candidateCtrl');
       expect(state.current.templateUrl).toEqual('app/components/user/candidate/candidate.template.html');
