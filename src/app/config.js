@@ -56,10 +56,10 @@
             $window.sessionStorage.setItem('token', response.data.auth_token);
           }
 
-          if (response.status !== 200) {
-              // Remove token if unauthorized response
-              $window.sessionStorage.removeItem('token');
-          }
+          // if (response.status !== 200) {
+          //     // Remove token if unauthorized response
+          //     $window.sessionStorage.removeItem('token');
+          // }
           return response || $q.when(response);
       },
       'responseError': function(rejection) {

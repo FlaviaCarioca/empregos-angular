@@ -4,7 +4,7 @@
       <h4>Login</h4>
       <div class="panel inner">
         <form name="loginForm" class="round-inputs" ng-submit="loginCtrl.login()" novalidate>
-          <p class="error" ng-if="loginCtrl.message">{{loginCtrl.message}}</p>
+          <p class="error" ng-if="loginCtrl.message">{{::loginCtrl.message}}</p>
           <div class="row">
             <div ng-messages="loginForm.username.$error" role="alert" ng-hide="loginForm.username.$pristine" >
               <p class="error" ng-message="required">Please enter an email address.</p>

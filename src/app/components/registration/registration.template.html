@@ -14,7 +14,7 @@
     <div class="tabs-content">
       <div class="content active" id="candidateTab">
         <form class="round-inputs" name="candidateForm" ng-model-options="{ updateOn: 'blur' }" ng-submit="regCtrl.registerCandidate()" novalidate>
-          <p class="error" ng-show="regCtrl.message">{{regCtrl.message}}</p>
+          <p class="error" ng-show="regCtrl.message">{{::regCtrl.message}}</p>
           <div ng-hide="candidateForm.email.$pristine" ng-messages="candidateForm.email.$error" role="alert">
             <p class="error" ng-message="required email">Please enter a valid email address.</p>
           </div>
